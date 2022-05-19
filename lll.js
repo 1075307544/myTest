@@ -92,3 +92,4 @@ var obj = new Proxy(
 console.log(obj[0]);
 
 console.log(111);
+console.log(222);

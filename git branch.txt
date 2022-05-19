@@ -1,0 +1,14 @@
+// 本地分支推送到远程并自动关联（远程无，本地有）
+git push -u origin master
+
+
+//在当前分支输入该命令，就会将当前所在本地分支关联远程dev分支
+git branch -u origin/远程分支
+//写两个分支名的话远程分支写前面，本地分支写后面
+git branch -u origin/远程分支 本地分支
+
+//  查看分支映射关系
+git branch -vv
+
+// 新建本地分支 关联到已有的远程分支（远程有，本地无）
+git checkout --track origin/dev
