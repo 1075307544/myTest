@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100%;
+        height: 300px;
+        background-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box"></div>
+  </body>
+  <script>
+    let box = document.querySelector(".box");
+    // 防抖
+    function myDebounce(fn) {
+      let timeout = null;
+      return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          fn.apply(this, arguments);
+        }, 500);
+      };
+    }
+    // box.addEventListener(
+    //   "mousemove",
+    //   myDebounce(() => {
+    //     console.log(110);
+    //   })
+    // );
+    // 节流
+    function myThrottle(fn) {
+      let tag = true;
+      return function () {
+        if (!tag) return;
+        tag = false;
+        setTimeout(() => {
+          fn.apply(this, arguments);
+          tag = true;
+        }, 500);
+      };
+    }
+    box.addEventListener(
+      "mousemove",
+      myThrottle(() => {
+        console.log(120);
+      })
+    );
+    // reduce
+    Array.prototype.myReduce = function myReduce(fn, init) {
+      if (Array.isArray(this) && this.length > 0) {
+        let total;
+        for (let i = 0; i < this.length; i++) {
+          total = fn(init, this[i], i, this);
+          init = total;
+        }
+        return total;
+      }
+    };
+    let a = [1, 2, 3, 4];
+    let b = a.myReduce((total, a) => {
+      return total * a;
+    }, 1);
+    console.log("010", b);
+    // promise
+    let promise1 = new Promise((resolve, reject) => {
+      resolve(11110);
+    });
+    promise1.then((a) => {
+      console.log(a);
+    })
+  </script>
+</html>

@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style type="text/css">
+      .content {
+        display: grid;
+        grid-template: 100px 100px 100px / 100px 100px 100px;
+        grid-gap: 10px 10px;
+        /* justify-items: center;
+        align-items: center; */
+        justify-content: space-around;
+        align-content: center;
+      }
+      .b {
+        background-color: yellow;
+        justify-self: center;
+        align-self: center;
+      }
+      .b:first-child {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background: red;
+      }
+      .b:nth-child(2) {
+        grid-row: 2/3;
+        grid-column: 2/4;
+        background: yellow;
+      }
+      .b:nth-child(3) {
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="b">1</div>
+      <div class="b">2</div>
+      <div class="b">3</div>
+      <div class="b">4</div>
+      <div class="b">5</div>
+      <div class="b">6</div>
+      <div class="b">7</div>
+      <div class="b">8</div>
+      <div class="b">9</div>
+    </div>
+  </body>
+</html>

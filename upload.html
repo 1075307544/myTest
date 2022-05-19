@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   
+  </head>
+  <body>
+    <input type="file" id="imgBlob" />
+    <img id="img" style="width: 100px; height: 100px" src="" alt="" />
+  </body>
+  <script>
+    // methods
+    let el = document.querySelector("#imgBlob")
+    el.addEventListener("change",changeImgBlob)
+    function changeImgBlob() {
+      let file = document.querySelector("#imgBlob") ,imgBlobSrc;
+      /**
+       *图片预览
+       *更适合PC端，兼容ie7+，主要功能点是window.URL.createObjectURL
+       */
+      var ua = navigator.userAgent.toLowerCase();
+      console.log(ua);
+      if (/msie/.test(ua)) {
+        imgBlobSrc = file.value;
+      } else {
+        imgBlobSrc = window.URL.createObjectURL(file.files[0]);
+      }
+      document.querySelector('#img').src = imgBlobSrc;
+      console.log(imgBlobSrc);
+      // //上传后台
+      const fd = new FormData();
+      fd.append("files", file.files[0]);
+      console.log(fd);
+      // fd.append("xxxx", 11111); //其他字段,根据实际情况来
+      // axios({
+      //   url: "/yoorUrl", //URL,根据实际情况来
+      //   method: "post",
+      //   headers: { "Content-Type": "multipart/form-data" },
+      //   data: fd,
+      // });
+    }
+    // methods
+    // function changeImgBlob() {
+    //   let that = this;
+    //   let file = document.querySelector("#imgBlob"),imgBaseSrc;
+    //   /**
+    //    *图片预览
+    //    *更适合H5页面，兼容ie10+，图片base64显示，主要功能点是FileReader和readAsDataURL
+    //    */
+    //   if (window.FileReader) {
+    //     var fr = new FileReader();
+    //     fr.readAsDataURL(file.files[0]);
+    //     fr.onloadend = function (e) {
+    //       console.log(e);
+    //       imgBaseSrc = e.target.result;
+    //       document.querySelector('#img').src = imgBaseSrc;
+    //       //上传后台
+    //       // axios({
+    //       //   url: "/yoorUrl", //URL,根据实际情况来
+    //       //   method: "post",
+    //       //   data: {
+    //       //     files: that.imgBaseSrc,
+    //       //   },
+    //       // });
+    //     };
+    //   }
+    // }
+  </script>
+</html>
