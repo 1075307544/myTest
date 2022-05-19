@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 100%;
+      display: flex;
+      /* justify-content:center; */
+      align-items: center;
+      flex-direction: column;
+    }
+    .container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      perspective: 5000;
+    }
+    .front,.back {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      transition: all 2s;
+    }
+    .front {
+      background:url('./aaaa.png') center no-repeat;
+      backface-visibility: hidden;
+    }
+    .back {
+      background:url('./jjjjwww.jpg') center no-repeat;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+    }
+    h1{
+    font-size: 100px;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    background: url('./bbb.png') 50% 50% / cover  no-repeat;
+    color:transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  </style>
+  <script>
+    function btclick(){
+      let front = document.querySelector('.front');
+      let back = document.querySelector('.back');
+      front.style.transform = 'rotateY(180deg)'
+      back.style.transform = 'rotateY(0deg)'
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="back"></div>
+    <div class="front"></div>
+  </div>
+  <button type="button" onclick="btclick()">翻转</butt>
+    <h1>新年快乐</h1>
+</body>
+</html>

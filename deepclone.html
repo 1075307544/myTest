@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+  <script>
+    let sourceObj = {
+      name: "allen",
+      date: new Date(),
+      skills: {
+        sport: "baseball",
+        sing: "dadaup",
+      },
+      RegExp: /jack/g,
+      element: document.querySelector(".box"),
+      say() {
+        console.log("nihao");
+      },
+    };
+    function deepCopy(sourceObj) {
+      if (typeof sourceObj !== "object") return;
+      let newObj = sourceObj instanceof Array ? [] : {};
+      for (let key in sourceObj) {
+        if (sourceObj[key] instanceof Date) {
+          newObj[key] = sourceObj[key];
+          // newObj[key] = new Date(sourceObj[key].getTime());
+        } else if (sourceObj[key] instanceof RegExp) {
+          newObj[key] = new RegExp(sourceObj[key]);
+        } else if (
+          sourceObj[key] instanceof Object &&
+          sourceObj[key].nodeType == 1
+        ) {
+          newObj[key] = sourceObj[key].cloneNode(true);
+        } else if (sourceObj[key] instanceof Function) {
+          newObj[key] = sourceObj[key];
+        } else if (sourceObj[key] instanceof Object) {
+          newObj[key] = deepCopy(sourceObj[key]);
+        } else {
+          newObj[key] = sourceObj[key];
+        }
+      }
+      return newObj;
+    }
+    let sourceObj2 = deepCopy(sourceObj);
+    console.log(sourceObj.say.prototype);
+    console.log(sourceObj2.say.prototype);
+  </script>
+</html>
