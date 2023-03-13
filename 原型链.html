@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Type() { };
+var	types = [1, "muyiy", true, Symbol(123)];
+
+for(var i = 0; i < types.length; i++) {
+	types[i].constructor = Type;
+	types[i] = [ types[i].constructor, types[i] instanceof Type, types[i].toString() ];
+};
+console.log(types);
+console.log( types.join("\n") );
+Con = [].shift.call([1,2,3]);
+console.log(1111,Con);
+Object.defineProperty(Object.prototype,'__proto__',{
+	get(){
+		console.log('get')
+	}
+});
+
+({}).__proto__;
+console.log((new Object()).__proto__);
+console.log(typeof Symbol(1));
+</script>
+</html>

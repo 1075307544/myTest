@@ -1,4 +1,7 @@
-const a = 110,b = 120
-exports = b
-module.exports = a
-console.log(exports,module.exports);
+const vivi = {
+    a:1
+}
+const nana = {
+    b:2
+}
+export {vivi,nana}

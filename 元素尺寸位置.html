@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+            margin: 0;
+        }
+        .father {
+            width: 500px;
+            height: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin:30px;
+            overflow: scroll;
+        }
+        .son1 {
+            width: 600px;
+            height: 200px;
+            background-color: #ecf
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1"></div>
+    </div>
+</body>
+<script>
+    let father = document.querySelector('.father');
+    document.write('offsetWidth:',father.offsetWidth);
+    document.write('clientWidth:',father.clientWidth);
+    document.write('scrollWidth:',father.scrollWidth);
+    document.write('offsetLeft:',father.offsetLeft);
+    document.write('offsetTop:',father.offsetTop);
+    console.log(father.getBoundingClientRect());
+    // width height 同offsetWidth offsetHeight
+    // x y 同 offsetLeft offsetTop 相对包含块的位置
+    // left 元素最左边距离视口最左边的距离 right 元素最右边距离视口最右边的距离 bottom，top 同理
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Father() {
+        this.property = true;
+    }
+    Father.prototype.getFatherValue = function () {
+        return this.property;
+    }
+    function Son() {
+        this.sonProperty = false;
+    }
+    Son.prototype = new Father();
+    Son.prototype.getSonVaule = function () {
+        return this.sonProperty;
+    }
+    var instance = new Son();
+    console.log(instance.getFatherValue());//
+    console.log(instance instanceof Object);//
+    console.log(instance instanceof Father);//
+    console.log(instance instanceof Son);//
+    console.log(instance);
+
+    let obj = {
+        name: 'cc',
+        fun: [1,2,3,4]
+    }
+    let copy = Object.create(obj,{
+        name:{
+            value: 'aa',
+        }
+    })
+    console.log(copy);
+    console.log(Date.now().toLocaleString());
+    console.log(new Date().toLocaleString());
+    console.log([1,2,3].toString());
+    console.log({a:1,b:2}.toString());
+    console.log([1,2,3].valueOf());
+    console.log({a:1,b:2}.valueOf());
+    console.log(new Number(110));
+    let app = new Number(120)
+    console.log(app.valueOf(),'----');
+    console.log(typeof new Number(110));
+    console.log(typeof Number('110'));
+    class Father2 {
+        constructor(e) {
+            console.log(e);
+            this.name = e[0]
+            this.age = e[1]
+        }
+        hello() {
+        
+        }
+    }
+    let abb = new Father2([123,444])
+    console.log(1111,abb);
+    class Son2 extends Father2 {
+        constructor(params) {
+            super(params)
+            this.hobby = ['chi','he','wan']
+        }
+        cry(){}
+    }
+    const son2 = new Son2(['xiaomig',88])
+    console.log(son2);
+</script>
+
+</html>

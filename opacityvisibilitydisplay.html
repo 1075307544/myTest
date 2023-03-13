@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .opacity {
+            opacity: 0;
+        }
+        .visibility {
+            visibility: hidden;
+        }
+        .display {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="opacity">opacity</div>
+    <div class="visibility">visibility</div>
+    <div class="display">display</div>
+    <div>xixixixixii</div>
+</body>
+<script>
+    document.querySelector('.opacity').addEventListener('click',()=>{
+        console.log('opacity');
+    })
+    document.querySelector('.visibility').addEventListener('click',()=>{
+        console.log('visibility');
+    })
+    document.querySelector('.display').addEventListener('click',()=>{
+        console.log('display');
+    })
+</script>
+</html>

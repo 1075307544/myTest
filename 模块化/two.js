@@ -1,2 +1,3 @@
-const a = require('./one')
-console.log(a);
+import { vivi,nana } from "./one";
+console.log('[ vivi ] >', vivi)
+console.log('[ nana ] >', nana)
