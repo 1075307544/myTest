@@ -1,0 +1,8 @@
+h1 {
+    width: 400px;
+    height: 600px;
+    background: url('./jw.jpg') repeat 400px 600px;
+}
+body {
+    background-color:pink;
+}

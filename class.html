@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // class Dog {
+    //     constructor(name,age){
+    //         this.name = name
+    //         this.age = age
+    //     }
+    //     eat(){
+    //         console.log('i can eat');
+    //     }
+    // }
+    // let fafa = new Dog('fafa',2);
+    // console.log(fafa);
+    // console.log(fafa.__proto__ === Dog.prototype);
+    // console.log(fafa.constructor === Dog);
+    // console.log(fafa.__proto__.hasOwnProperty('eat'));
+
+    // function Cat(name,sex){
+    //     this.name = name;
+    //     this.sex = sex;
+    //     this.cry = function(){
+    //         console.log('i will cry');
+    //     };
+    // }
+    // let cat = new Cat('kitty','male');
+    // console.log(cat);
+    // console.log(cat.hasOwnProperty('cry'));
+    // console.log(cat.__proto__ === Cat.prototype);
+    // console.log(cat.__proto__.hasOwnProperty('constructor'));
+
+    let string = new String()
+    console.log(string.__proto__.hasOwnProperty('constructor'));
+    console.log(string.__proto__===String.prototype);
+    console.log(string.__proto__.__proto__ === Object.prototype);
+    console.log(Object.prototype.__proto__);
+
+    let fun = new Function()
+    console.log(fun.__proto__.hasOwnProperty('constructor'));
+    console.log(fun.__proto__===Function.prototype);
+    console.log(fun.__proto__.__proto__===Object.prototype);
+    console.log(Function.__proto__===Function.prototype);
+    console.log(Function.__proto__.__proto__===Object.prototype);
+
+    let obj = new Object();
+    console.log(obj.__proto__===Object.prototype);
+
+    let a = 'xxx'
+    let b = new String('xxx')
+    console.log(a,b,b.valueOf());
+</script>
+</html>

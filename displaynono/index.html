@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 占据位置，不触发事件 */
+            /* visibility: hidden; */ 
+            /* 占据位置，触发事件 */
+            /* opacity: 0;  */
+            /* 不占位置，元素任存在，不触发事件 */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="home"></div>
+    asdkjhksjdhfkjsdhfkj
+</body>
+<script>
+    let home = document.querySelector('.home')
+    home.addEventListener('click',()=>{
+        console.log('xixixiixi');
+    })
+</script>
+</html>
