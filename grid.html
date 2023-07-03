@@ -3,32 +3,34 @@
     <style type="text/css">
       .content {
         display: grid;
-        grid-template: 100px 100px 100px / 100px 100px 100px;
+        grid-template-rows: 200px 100px 100px;
+        grid-template-columns: 200px 100px 100px;
         grid-gap: 10px 10px;
-        /* justify-items: center;
-        align-items: center; */
-        justify-content: space-around;
+        grid-template-areas: 
+        ". head head"
+        " foot foot foot"
+        "foot foot foot";
+        /* justify-content: space-around; */
         align-content: center;
+        grid-auto-rows: 100px;
       }
       .b {
         background-color: yellow;
-        justify-self: center;
-        align-self: center;
+        /* justify-self: center; */
+        /* align-self: center; */
       }
       .b:first-child {
-        grid-row-start: 1;
+        /* grid-row-start: 1;
         grid-row-end: 2;
         grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column-end: 3; */
         background: red;
+        grid-area: foot;
       }
       .b:nth-child(2) {
-        grid-row: 2/3;
-        grid-column: 2/4;
-        background: yellow;
-      }
-      .b:nth-child(3) {
-
+        /* grid-row: 2/3;
+        grid-column: 2/4; */
+        background: green;
       }
     </style>
   </head>
@@ -45,4 +47,11 @@
       <div class="b">9</div>
     </div>
   </body>
+  <script>
+
+    for(let i=0;i<100;i++) {
+      console.log(i);
+    }
+    
+  </script>
 </html>

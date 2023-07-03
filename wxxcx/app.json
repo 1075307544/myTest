@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/todolist/todolist",
+    "pages/demo/demo",
+    "pages/center/center"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#14c145",
+    "navigationBarTitleText": "myapp",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#14c145",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/todolist/todolist",
+        "text": "todolist",
+        "iconPath": "images/tab1.png",
+        "selectedIconPath": "images/tab1.1.png"
+      },
+      {
+        "pagePath": "pages/demo/demo",
+        "text": "demo",
+        "iconPath": "images/tab2.png",
+        "selectedIconPath": "images/tab2.1.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "center",
+        "iconPath": "images/tab3.png",
+        "selectedIconPath": "images/tab3.1.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
