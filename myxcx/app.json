@@ -1,0 +1,40 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/category/category",
+        "pages/shopcar/shopcar",
+        "pages/center/center",
+        "pages/detail/detail"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#14c145",
+        "navigationBarTitleText": "购物",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+      "list":[{
+        "pagePath":"pages/home/home",
+        "text":"首页",
+        "iconPath":"./images/shouye.png",
+        "selectedIconPath":"./images/shouye_light.png"
+      },{
+        "pagePath":"pages/category/category",
+        "text":"分类",
+        "iconPath":"./images/fenlei.png",
+        "selectedIconPath":"./images/fenlei_light.png"
+      },{
+        "pagePath":"pages/shopcar/shopcar",
+        "text":"购物车",
+        "iconPath":"./images/gouwuche.png",
+        "selectedIconPath":"./images/gouwuche_light.png"
+      },{
+        "pagePath":"pages/center/center",
+        "text":"我的",
+        "iconPath":"./images/wode.png",
+        "selectedIconPath":"./images/wode_light.png"
+      }]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

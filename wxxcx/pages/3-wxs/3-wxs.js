@@ -1,59 +1,46 @@
-// pages/todolist/todolist.js
+// pages/3-wxs/3-wxs.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    detail:"",
-    list:[]
+    time:1500000000000
   },
-  handleInput(e){
-    this.setData(
-      {detail:e.detail.value}
-    )
-  },
-  handleTap(){
-    this.setData(
-      {
-        list:[...this.data.list,this.data.detail],
-        detail:""
-      }
-    )
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    console.log('onLoad');
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    console.log('onReady');
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    console.log('onShow');
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
-
+    console.log('onHide');
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    console.log('onUnload');
   },
 
   /**

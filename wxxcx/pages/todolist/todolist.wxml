@@ -1,6 +1,0 @@
-<!--pages/todolist/todolist.wxml-->
-<view class="box">
-  <input bindinput="handleInput" type="text" value="{{detail}}"/>
-  <button size="mini" bindtap="handleTap">add</button>
-</view>
-<view wx:for="{{list}}" wx:for-item="listItem" wx:key="listItem">{{listItem}}</view>

@@ -1,0 +1,6 @@
+function handleDate(date) {
+  var d = getDate(date)
+  return d.getFullYear()
+}
+
+module.exports = {handleDate:handleDate}

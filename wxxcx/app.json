@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/todolist/todolist",
+    "pages/3-wxs/3-wxs",
     "pages/demo/demo",
     "pages/center/center"
   ],
@@ -16,8 +16,8 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/todolist/todolist",
-        "text": "todolist",
+        "pagePath": "pages/3-wxs/3-wxs",
+        "text": "wxs",
         "iconPath": "images/tab1.png",
         "selectedIconPath": "images/tab1.1.png"
       },

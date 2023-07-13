@@ -1,0 +1,13 @@
+<!--pages/todolist/todolist.wxml-->
+<view class="box">
+  <input bindinput="handleInput" type="text" value="{{detail}}"/>
+  <button size="mini" bindtap="handleAdd">add</button>
+</view>
+<view wx:if="{{list.length}}">
+  <view class="list" wx:for="{{list}}" wx:for-item="listItem" wx:key="listItem">
+    <text>{{listItem}}</text>
+    <button size="mini" bindtap="handleDel" data-itemId="{{index}}">delete</button>
+  </view>
+</view>
+<view wx:else="">暂无代办事项</view>
+

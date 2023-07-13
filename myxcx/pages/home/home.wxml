@@ -1,0 +1,5 @@
+<!--pages/home/home.wxml-->
+<!-- <text>pages/home/home.wxml</text> -->
+<button bindtap="handlePost">post</button>
+<button bindtap="handleGet">get</button>
+<button bindtap="handleNav">nav</button>
