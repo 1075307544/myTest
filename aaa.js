@@ -18,3 +18,4 @@ const obj = {};
 obj.madd = memorize(add);
 obj.madd(1, 2);
 obj.madd(1, 2);
+console.log(111);
