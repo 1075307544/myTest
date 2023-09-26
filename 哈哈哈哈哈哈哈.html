@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father { 
+            border: 1px solid black;
+            padding: 10px;
+            width: 100px;
+            height: 100px;
+            background-color:red;
+            overflow: hidden;
+        }
+        .child { 
+            box-sizing: border-box;
+            background-color:pink;
+            border: 1px solid black;
+            width: 100%;
+            height: 300px;
+        }
+        p { 
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <!-- 这是注释 -->
+        <div class="child">
+            <p>我是pppppppppppppp</p>
+        </div>
+    </div>
+    <p class="father"></p>
+</body>
+<script>
+    // console.log(typeof(JSON.stringify({a:1})));
+    // let a = new Array();
+    // a.__proto__ = Function.prototype;
+    // console.log(a.__proto__===Array.prototype);
+    // console.log(a.__proto__ === Array.prototype);
+    // console.log(a instanceof Function);
+
+    let obj = {a:1,b:2}
+    // Object.defineProperty(obj,'a',{
+    //     writable:false,
+    //     enumerable:false,
+    //     configurable:false
+    // })
+    // console.log(Object.getOwnPropertyDescriptors(obj));
+    // obj.a = 4
+    // obj.b = 4
+    // console.log(obj);
+    // console.log(Object.keys(obj));
+    // for (let key in obj) {
+    //     console.log(key);
+    // }
+    // Object.defineProperty(obj, 'a', {
+    //     writable:true,
+    // })
+    // obj.a = 5
+    // console.log(obj);
+    // delete obj.a
+    // console.log(obj);
+    // let symbol1 = Symbol('这是一个symbol属性')
+    // obj[symbol1] = 'hahaha'
+    // // console.log(obj);
+    // for (let key in obj) {
+    //     console.log(key);
+    // }
+    // console.log(Reflect.ownKeys(obj));
+    // let arr = new Array(1)
+    // console.log(Array[Symbol.hasInstance]);
+    // console.log(Object.entries(obj));
+    // let map = new Map(Object.entries(obj));
+    // console.log('[ map ] >', map)
+
+    // let father = document.querySelectorAll('.father');
+    let father2 = document.getElementsByClassName('father');
+    console.log(father2);
+    // console.log(father);
+    // console.log(father[0].childNodes[3]);
+    // console.log(document.domain);
+    // console.log('宽' + father[0].offsetWidth);
+    // console.log('高' + father[0].offsetHeight);
+    // console.log('宽' + father[0].clientWidth);
+    // console.log('高' + father[0].clientHeight);
+    // console.log('宽' + father[0].scrollWidth);
+    // console.log('高' + father[0].scrollHeight);
+    // console.log('宽' + father[0].offsetTop);
+    // console.log('高' + father[0].offsetLeft);
+    // console.log('宽' + father[0].clientTop);
+    // console.log('高' + father[0].clientLeft);
+    // console.log(father[0].getBoundingClientRect());
+    let iterable = {
+	    0: 'a',
+	    1: 'b',
+	    2: 'c',
+	    length: 3,
+	    [Symbol.iterator]: Array.prototype[Symbol.iterator]   //用遍历数组的Symbol.iterator去遍历该伪数组对象
+	};
+    let iter = iterable[Symbol.iterator]();
+	let temp = null;
+	while (iter){
+	    temp = iter.next();
+	    if (temp.done){
+	        break
+	    }else {
+	        console.log(temp.value)
+	    }
+	}
+    let b = Object.create({a:1})
+    console.log(b.a);
+    b.c = 2
+    console.log(b);
+    for(let i in b){
+        console.log(i,b[i]);
+    }
+</script>
+</html>

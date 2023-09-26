@@ -1,0 +1,17 @@
+/* pages/todolist/todolist.wxss */
+.box,.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+input {
+  border: 1px solid #ccc;
+  height: 30px;
+  width: 80%;
+  line-height: 20px;
+}
+button {
+  background-color: #ccc;
+  margin: 0 10px;
+}

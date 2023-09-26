@@ -1,0 +1,31 @@
+// 本地分支推送到远程并自动关联（远程无，本地有）
+git push -u origin master
+
+
+//在当前分支输入该命令，就会将当前所在本地分支关联远程dev分支
+git branch -u origin/远程分支
+//写两个分支名的话远程分支写前面，本地分支写后面
+git branch -u origin/远程分支 本地分支
+
+//  查看分支映射关系
+git branch -vv
+
+// 新建本地分支 关联到已有的远程分支（远程有，本地无）
+git checkout --track origin/dev
+
+
+// 暂存的操作
+git stash save "注释"  //添加一个暂存
+git stash list         //查看暂存列表
+git stash clear        //清楚全部暂存
+git stash apply        //应用最近的一次暂存
+git stash pop          //应用并删除最近的一次暂存
+git stash drop         //删除最近的一次暂存
+
+
+// 版本回退
+git reset --hard Hash //强制回退到某个版本,不保留期间修改的内容
+git reset --soft Hash //回退到某个版本,保留期间修改的内容
+
+// 撤销commit
+git revert Hash // 撤销某次commit的提交内容,并生成一条新的commit记录

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const BasicVarGen = function () {
+    this.s1 = 'IAmString'
+    this.s2 = 'IAmString'
+}
+
+
+let a = new BasicVarGen()
+let b = new BasicVarGen()
+var person = {
+  name: "axuebin",
+  age: 25
+};
+function say(job,tag){
+  console.log(this.name+":"+this.age+" "+job+tag);
+}
+say.call(person,"FE",'ss'); // axuebin:25
+say.apply(person,["FE",'dd']); // axuebin:25
+
+</script>
+</html>

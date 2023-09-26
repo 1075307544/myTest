@@ -1,0 +1,7 @@
+<!--pages/home/home.wxml-->
+<text>home</text>
+<view id="id-{{name}}">我是home{{name}}</view>
+<view wx:for="{{list}}" wx:for-item="myitem" wx:key="myitem">--{{myitem}}--</view>
+<view wx:if="{{!isHidden}}">惰性隐藏与显示</view>
+<view hidden="{{isHidden}}">隐藏与显示</view>
+<button type="primary" bindtap="btnclick">click</button>

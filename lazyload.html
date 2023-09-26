@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 117px;
+        height: 300px;
+        border: 1px solid #ccc;
+        overflow-y: scroll;
+        position: relative;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+      <img src="" data-src="./aaaa.png" />
+    </div>
+  </body>
+  <script>
+    let box = document.querySelector(".box");
+    let boxHeight = box.clientHeight; //容器高度
+    scrollFn()
+    box.addEventListener("scroll", scrollFn);
+    function scrollFn() {
+      let scrollTop = box.scrollTop || 0; //滚动的距离
+      console.log(boxHeight, scrollTop);
+      let imgs = document.querySelectorAll(".box img");
+      for (let i = 0; i < imgs.length; i++) {
+        let imgScrollTop = imgs[i].offsetTop;
+        if (imgScrollTop < scrollTop + boxHeight) {
+          imgs[i].src = imgs[i].dataset.src;
+        }
+      }
+    }
+  </script>
+</html>

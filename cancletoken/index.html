@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn" onclick="clickBtn()">请求</button>
+    <button id="btn" onclick="cacelBtn()">取消</button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const request = axios.create({
+        baseURL: 'http://localhost:5000',
+        timeout: 8000,
+    })
+    const reqArr = []
+    const  cancelArr = []
+    request.interceptors.request.use(config => {
+        // const CancelToken = axios.CancelToken;
+        // let cancel
+        // config.cancelToken = new CancelToken(function executor(c) {
+        //         cancel = c;
+        //     })
+        // if (reqArr.length > 0 && reqArr.includes(config.url)) {
+        //     cancel()
+        // } else {
+        //     reqArr.push(config.url)
+        // }
+        return config
+    }, error => {
+        return Promise.reject(error)
+    })
+    request.interceptors.response.use(response => {
+        if(reqArr.length > 0 && reqArr.includes(response.config.url)) {
+            let index = reqArr.findIndex(item=>item === response.config.rul)
+            reqArr.splice(index, 1)
+        }
+        return Promise.resolve(response)
+    })
+    function clickBtn() {
+        // for(let i = 0; i < 20; i++) {
+        //     request.get('/cancel')
+        //     .then(res => {
+        //         console.log(res.data);
+        //     })
+        //     .catch(err => {
+        //         console.log(err);
+        //     })
+        // }
+        request.get('/cancel')
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+    function cacelBtn() {
+        // cancel()
+
+        let controller = new AbortController();
+        controller.abort()
+    }
+</script>
+
+</html>

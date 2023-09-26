@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #app div:nth-child(1) {
+                width: 100px;
+                height: 100px;
+                background-color:pink;
+                animation-name: testanimations;
+                animation-duration: 3000ms;
+                animation-timing-function:ease;
+            }
+            @keyframes testanimations {
+                from { transform: translate(0, 0); }
+                20% { transform: translate(20px, 20px); }
+                40% { transform: translate(40px, 0); }
+                60% { transform: translate(60px, 20); }
+                80% { transform: translate(80px, 0); }
+                to { transform: translate(100px, 20px); }
+            } */
+            #app {
+                display: flex;
+            }
+            #app div{
+                flex: 0 0 100px;
+            }
+            #app div:nth-child(1) {
+                width: 100px;
+                height: 100vh;
+                background-color: aqua;
+            }
+            #app div:nth-child(2) {
+                width: 200px;
+                height: 100vh;
+                background-color:coral;
+            }
+            #app div:nth-child(3) {
+                width: 100px;
+                height: 100vh;
+                background-color: pink;
+            }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

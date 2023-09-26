@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+            padding:0;
+            margin: 0;
+        }
+        .box {
+            width: 100%;
+            height: 100vh;
+            background-color: pink;
+        }
+        .head {
+            width: 3.125rem;
+            height:3.125rem;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="head"></div>
+        <image class="" src="https://img0.baidu.com/it/u=697903734,1544489081&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" lazy-load="false" binderror="" bindload="" />
+    </div>
+</body>
+<script>
+    (function () {
+    var dpr = window.devicePixelRatio;
+    var meta = document.createElement('meta');
+    var scale = 1 / dpr;
+    console.log(dpr);
+    meta.setAttribute('name', 'viewport');
+    meta.setAttribute('content', 'width=device-width, user-scalable=no, initial-scale=' + scale +
+      ', maximum-scale=' + scale + ', minimum-scale=' + scale);
+    document.getElementsByTagName('head')[0].appendChild(meta);
+    // 动态设置的缩放大小会影响布局视口的尺寸
+      function resize() {
+      var deviceWidth  = document.documentElement.clientWidth;
+      document.documentElement.style.fontSize = (deviceWidth / 10) +'px';
+         }
+    resize();
+    window.onresize = resize;
+  })()
+  var reg = /abc/g;
+ var str = "123abc456abc";
+ console.log(reg.lastIndex);//0
+ console.log(reg.test(str));//true
+ console.log(reg.lastIndex);//6
+ console.log(reg.test(str));//true
+ console.log(reg.lastIndex);//12
+ console.log(reg.test(str));//false
+ var str = "xyzx";
+var reg1 = /x*/;
+var reg2 = /a/;
+var res1 = reg1.exec(str);
+var res2 = reg2.exec(str);
+console.log(res1);//["x", index: 0, input: "xyz"]
+console.log(res2);//null
+var str = "abcad";
+var reg1 = /a/g;
+var reg2 = /x/;
+console.log(str.match(reg1));//["a", index: 0, input: "abcd"]
+console.log(str.match(reg2));//null
+var str = "xxx";
+console.log(str.replace('x','y'));//yxx
+console.log(str.replaceAll('x','y'));//yyy
+console.log(str.replace(/x/,'y'));//yxx
+console.log(str.replace(/x/g,'y'));//yyy
+</script>
+</html>

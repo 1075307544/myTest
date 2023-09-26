@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "xixi":"../../components/xixi/xixi"
+    },
+    "navigationBarTitleText": "分类"
+}

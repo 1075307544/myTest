@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="file" id="imgBlob" />
+    <img id="img" style="width: 100px; height: 100px" src="" alt="" />
+</body>
+<script>
+    let e2 = {
+        n: 2,
+        toString: function () {
+            console.log('this is toString')
+            return this.n
+        },
+        valueOf: function () {
+            console.log('this is valueOf')
+            return this.n * 2
+        }
+    }
+    let a = new Number(11)
+    console.log(a);
+    console.log(a.valueOf());
+    console.log(e2);
+    alert(e2);
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='http://localhost:3001/public/sync.js'></script>
+    <script src='http://localhost:3001/public/async.js' async></script>
+    <script src='http://localhost:3001/public/defer.js' defer></script>
+</head>
+
+<body>
+    <div>some words</div>
+    <script>
+        console.log('000');
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOMContentLoaded')
+        });
+
+        window.onload = () => {
+            console.log('load')
+        }
+        localStorage.setItem('xixi','1234545678')
+        (function () {
+            let sum = 0
+            for (let i = 0; i < 2e9; i++) {
+                sum += i
+            }
+        })()
+        // window.location.href = '111111'
+    </script>
+    <div id="sync">sync: initial</div>
+    <div id="async">async: initial</div>
+    <div id="defer">defer: initial</div>
+    <div>footer</div>
+</body>
+/^(?:(?:\d{3}-)?\d{8}|^(?:\d{4}-)?\d{7,8})(?:-\d+)?$/
+/^(?:(?:\+|00)86)?1\d{10}$/
+</html>

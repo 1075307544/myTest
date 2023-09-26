@@ -1,0 +1,4 @@
+<!--pages/3-wxs/3-wxs.wxml-->
+<wxs src="./date.wxs" module="tools"/>
+
+<text>{{tools.handleDate(time)}}</text>

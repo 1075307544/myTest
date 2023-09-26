@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            border: 1px solid #ccc;
+            flex-wrap: wrap;
+            align-content: space-between;
+            align-items: center;
+        }
+        .content {
+            width: 100px;
+            height: 10px;
+            /* border: 1px solid #ccc; */
+            flex: 0 0 auto;
+        }
+        .content1 {
+            height: 50px;
+            background-color: red;
+            /* align-self: flex-start; */
+            /* flex: 0 1 auto; */
+        }
+        .content2 {
+            height: 120px;
+            background-color: blue;
+            /* flex: 0 0.1 200px; */
+        }
+        .content3 {
+            background-color: antiquewhite;
+        }
+        .content4 {
+            height: 70px;
+            background-color: forestgreen;
+        }
+        .content5 {
+            height: 30px;
+            background-color: pink;
+        }
+        .content6 {
+            height: 30px;
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        1
+        <div class="content content1"></div>
+        <div class="content content2"></div>
+        <div class="content content3"></div>
+        <div class="content content4"></div>
+        <div class="content content5"></div>
+        <div class="content content6"></div>
+    </div>
+</body>
+</html>
