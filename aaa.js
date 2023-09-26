@@ -11,7 +11,7 @@ const memorize = (fn) => {
 };
 
 function add(a, b) {
-  console.log(a,b,this);
+  console.log(a,b,this,333);
   return a + b;
 }
 const obj = {};
