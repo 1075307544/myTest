@@ -6,6 +6,14 @@
         "pages/center/center",
         "pages/detail/detail"
     ],
+    "subPackages": [
+        {
+            "root": "pkA",
+            "pages": [
+                "pages/cat/cat"
+            ]
+        }
+    ],
     "window": {
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#14c145",

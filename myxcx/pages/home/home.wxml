@@ -3,3 +3,4 @@
 <button bindtap="handlePost">post</button>
 <button bindtap="handleGet">get</button>
 <button bindtap="handleNav">nav</button>
+<button bindtap="tiao">跳转</button>

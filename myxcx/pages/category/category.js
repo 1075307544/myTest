@@ -5,9 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        showXx:false
     },
-
+    switch(){
+        this.setData({
+            showXx:!this.data.showXx
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

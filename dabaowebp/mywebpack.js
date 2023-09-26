@@ -105,11 +105,12 @@ class Compilation {
     let loaders = [];
     let { rules = [] } = this.options.module;
     rules.forEach((rule) => {
-      let test = rule;
+      let test = rule.test;
       if (modulePath.match(test)) {
         loaders.push(...rule.use);
       }
     });
+    // loader 处理代码
     sourceCode = loaders.reduceRight((code, loader) => {
       return loader(code);
     }, sourceCode);
@@ -217,7 +218,7 @@ class WebpackDonePlugin {
   }
 }
 const loader1 = (source) => {
-    console.log('[ this ] >', this)
+  console.log('[ this ] >', this)
   return source + "//给你的代码加点注释：loader1";
 };
 

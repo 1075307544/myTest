@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        .son {
+            width: 60px;
+            height: 60px;
+            background-color:palegoldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="son"></div>
+    </div>
+    <br>
+    <div class="title"></div>
+    <div class="content"></div>
+</body>
+<script>
+    let box = document.querySelector('.box')
+    let son = document.querySelector('.son')
+    let title = document.querySelector('.title')
+    let content = document.querySelector('.content')
+    function sleep(time){
+        const now = Date.now()
+        while(Date.now() - now < time){}
+    }
+    setTimeout(()=>{
+        console.log('开始繁忙');
+        sleep(10000)
+        console.log('繁忙结束');
+    },5000)
+    setTimeout(()=>{
+        console.log('timeout');
+    },6000)
+    son.addEventListener('click',()=>{
+        console.log('click');
+    })
+</script>
+</html>

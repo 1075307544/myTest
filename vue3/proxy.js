@@ -33,8 +33,8 @@ let pxyDog =  myproxy(dog)
 // pxyDog.detail.like[2] = 'zzz'
 // console.log(pxyDog.detail.like);
 // pxyDog.detail.like.push('xixi')
-dog.detail.like.push('kkk')
-console.log(pxyDog.detail.like);
+// dog.detail.like.push('kkk')
+// console.log(pxyDog.detail.like);
 // pxyDog.detail.height = 200
 // console.log(pxyDog.detail.height);\
 
