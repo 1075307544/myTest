@@ -9,9 +9,14 @@
     
 </body>
 <script>
-     let obj = {a:1}
-     console.log(obj);
-     Object.prototype = null
-     console.log(obj.constructor);
+     const pp = Promise.resolve()
+     pp.then(()=>{
+        throw new Error('err')
+     }).then(()=>{},(err)=>{
+        console.log('err1');
+        return Promise.reject ()
+     }).catch(err=>{
+        console.log('err2');
+     })
 </script>
 </html>

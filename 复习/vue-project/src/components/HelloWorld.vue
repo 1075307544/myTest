@@ -1,42 +1,28 @@
-<script setup lang="ts">
-const a = defineProps<{
-  msg: string
-}>()
-console.log(a.msg);
-</script>
-
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
-  </div>
+  <Suspense>
+     <!-- v-slot:defaul可以简写成#defaul -->
+    <template v-slot:default>
+      <AsyncComp/>
+    </template>
+
+    <template v-slot:fallback>
+      <h1>LOADING...</h1>
+    </template>
+  </Suspense>
 </template>
 
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
+<script lang="ts">
+import { defineAsyncComponent } from 'vue'
+import AsyncC from './AsyncComp.vue'
+const AsyncComp = defineAsyncComponent(() =>import('./AsyncComp.vue'))
+export default {
+  setup() {
+    return {
+    }
+  },
 
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
+  components: {
+    AsyncComp,
   }
 }
-</style>
+</script>
